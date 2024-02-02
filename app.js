@@ -5,7 +5,7 @@ let listaDeNumeroSorteados = [];
 // let numeroMaximo = 10;
 
 //! Intento de crear un jeugo con numero de sorteos dado por el ususario
-let numeroMaximo = parseInt(prompt("Ingresa un numero total de jeugos, numero en decimas por favor."))
+let numeroMaximo = parseInt(prompt("Ingresa un número del 1 al 1000 en décimas."))
 
 // console.log(numeroSecreto);
 function asignarTextoElemento(elemento, texto) {
@@ -19,14 +19,14 @@ function verificarIntento() {
     // console.log(intentos);
 
     if (numeroDeUsuario === numeroSecreto) {
-        asignarTextoElemento('p', `Acertaste el numero en ${intentos} ${(intentos === 1) ? 'intento' : 'intentos'}`);
+        asignarTextoElemento('p', `Acertaste el número en ${intentos} ${(intentos === 1) ? 'intento' : 'intentos'}`);
         document.getElementById('reiniciar').removeAttribute('disabled');
     } else {
         // El ususario no acerto 
         if (numeroDeUsuario > numeroSecreto) {
-            asignarTextoElemento('p', 'El numero secreto es menor');
+            asignarTextoElemento('p', 'El número secreto es menor');
         } else {
-            asignarTextoElemento('p', 'El numero secreto es mayor');
+            asignarTextoElemento('p', 'El número secreto es mayor');
         }
         intentos++;
         limpairCaja();
@@ -45,14 +45,14 @@ function crearNumeroSecreto() {
     //console.log(listaDeNumeroSorteados);
     //* Verificar si el valor ingresado no es multiplo de 10
     if (numeroMaximo % 10 != 0) {
-        alert('El numero debe ser un valor de deiz en diez. presiona F5')
+        alert('El número debe ser un valor de diez en diez. presiona F5')
     }
     //* de ser multiplo el flujo del programa sigue su curso
     else {
         // Si se llega al numero maximo de numeros a sortear la lista se reestablece tal cual el juego 
         if (listaDeNumeroSorteados.length == numeroMaximo) {
             // Mostrar mensaje en pantalla 
-            asignarTextoElemento('p', 'Ya se sortearon todos los numeros posibles')
+            asignarTextoElemento('p', 'Ya se sortearon todos los números posibles')
         } 
         else {
 
@@ -70,7 +70,7 @@ function crearNumeroSecreto() {
 }
 
 function condiconesIniciales() {
-    asignarTextoElemento('h1','Juego del numero secreto!');
+    asignarTextoElemento('h1','Juego del número secreto!');
     asignarTextoElemento('p', `Indica un número del 1 al ${numeroMaximo}`);
     numeroSecreto = crearNumeroSecreto();
     intentos = 1;
